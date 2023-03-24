@@ -1,36 +1,4 @@
 services:
-  app-001:
-    image: php-fpm-8-0-25
-    # enviroment:
-    #  - 'DOM_WEBROOT=/dom37176'
-    #  - 'USE_JEMALLOC=0'
-    working_dir: /dom0001
-    hostname: php-jcmarin
-    volumes:
-      - /usr/local/etc/fpm-pools/dom0001.conf:/usr/local/etc/fpm-pools/dom0001.conf
-      - /usr/local/etc/php-fpm.conf:/usr/local/etc/php-fpm.conf
-      #- /usr/local/etc/php-fpm.d/zzz-logs.conf:/usr/local/etc/php-fpm.d/zzz-logs.conf  
-      #- /usr/local/etc/php/conf.d:/usr/local/etc/php/conf.d
-      - /usr/local/etc/php/php.ini:/usr/local/etc/php/php.ini
-      - /data/s00001/dom0001/dom0001:/dom0001:rslave
-      - /data/s00001/dom0001//mnt/:/mnt:rslave  
-      #- ./current-fpm:/etc/php/current/fpm/
-      # - ./current-pool.d/:/etc/php/current/fpm/pool.d/
-      #- ./current-customer:/etc/php/current/fpm/user-conf.d/ 
-      #- ./php8-fpm:/etc/php/8.0/fpm/
-      - /etc/group:/etc/group:ro
-      - /etc/passwd:/etc/passwd:ro
-      - /etc/hostname:/etc/host-hostname:ro
-      - /etc/mysql/conf.d:/etc/mysql/conf.d:ro
-      - /etc/msmtprc:/etc/msmtprc:ro
-    #volumes:
-    #  - type: bind
-    #    source: /usr/local/etc/php/php.ini
-    #    target: /usr/local/etc/php/php.ini:
-    userns_mode: host
-    network_mode: host
-    restart: always
-
   app-002:
     image: php-fpm-8-0-25
     # enviroment:
